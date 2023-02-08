@@ -26,5 +26,16 @@ pipeline{
                 }
             }
         }
+        stage("quality gate"){
+            steps{
+                echo '<--------------- Sonar Gate Analysis Started --------------->'
+                timeout(time: 1, unit: 'HOUR')
+                def qg = waitForQualityGate()
+                if(qg.status !='OK') {
+                    error "Pipeline failed due to quality gate failures: $(qg.status)"
+                }
+                echo '<--------------- Sonar Gate Analysis Ends --------------->'
+            }
+        }
     }
     }

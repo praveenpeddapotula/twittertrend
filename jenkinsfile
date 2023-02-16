@@ -84,7 +84,7 @@ pipeline{
             steps {
                 script {
                    echo '<--------------- Docker Publish Started --------------->'  
-                    docker.withRegistry(registry, 'jfrogforjenkins'){
+                    docker.withRegistry(registry, 'jfrog_for_jenkins'){
                         app.push()
                     }    
                    echo '<--------------- Docker Publish Ended --------------->'  

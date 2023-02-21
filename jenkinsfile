@@ -95,9 +95,9 @@ pipeline{
 	stage('deploy'){
 	steps{
 	script{
-	  echo '<------------- Deployment started ---------------->
+	  echo '<------------- Deployment started ---------------->'
 	  sh './deploy.sh'
-	  echo '<------------------ Deployment completed ----------->
+	  echo '<------------------ Deployment completed ----------->'
 	  }
 	  }
 	  }

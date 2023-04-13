@@ -4,7 +4,7 @@ def version   = '2.0.3'
 pipeline{
     agent {
         node {
-            label "valaxy"
+            label "maven-agent"
         }
     }
     environment {
@@ -29,11 +29,11 @@ pipeline{
 
 //       stage ("Sonar Analysis") {
 //            environment {
- //              scannerHome = tool 'valaxy-sonarscanner'
+ //              scannerHome = tool 'SonarScanner'
   //          }
  //           steps {
  //               echo '<--------------- Sonar Analysis started  --------------->'
- //               withSonarQubeEnv('valaxy-sonarqube-server') {    
+ //               withSonarQubeEnv('SonarQube-Server') {    
  //                   sh "${scannerHome}/bin/sonar-scanner"
  //               echo '<--------------- Sonar Analysis stopped  --------------->'
  //               }    

@@ -4,13 +4,13 @@ pipeline {
             label 'maven-jenkins-agent'
         }
     }
-    environment{
+    environment {
         PATH = "/opt/apache-maven-3.9.9/bin:$PATH"
 
     }
     stages {
-        stage(clone the code){
-            steps{
+        stage('clone the code') {
+            steps {
                 sh 'mvn clean deploy'
             }
         }
